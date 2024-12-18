@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload & Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .image-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        img {
+            max-width: 200px;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload and Display Images</h1>
+
+    <form action="/" method="POST" enctype="multipart/form-data">
+        <label>Image:</label>
+        <input type="file" name="file" required><br><br>
+
+        <label>Location:</label>
+        <input type="text" name="location" placeholder="Enter location"><br><br>
+
+        <label>Caption:</label>
+        <input type="text" name="caption" placeholder="Enter caption"><br><br>
+
+        <label>Timestamp (Optional):</label>
+        <input type="text" name="timestamp" placeholder="YYYY-MM-DD HH:MM:SS"><br><br>
+
+        <button type="submit">Upload</button>
+    </form>
+
+    <h2>Uploaded Images</h2>
+    <div class="image-container">
+        {% for image in images %}
+            <div class="image-item">
+                <img src="{{ url_for('get_image', image_id=image._id) }}" alt="Image">
+                <p><strong>Filename:</strong> {{ image.filename }}</p>
+                <p><strong>Location:</strong> {{ image.location }}</p>
+                <p><strong>Caption:</strong> {{ image.caption }}</p>
+                <p><strong>Timestamp:</strong> {{ image.timestamp }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

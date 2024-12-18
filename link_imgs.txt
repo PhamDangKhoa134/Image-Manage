@@ -1,0 +1,7 @@
+C:/TaiLieu/Deep_Learning/Image_Manage/imgs/1.png
+C:/TaiLieu/Deep_Learning/Image_Manage/imgs/2.jpg
+C:/TaiLieu/Deep_Learning/Image_Manage/imgs/3.jpg
+C:/TaiLieu/Deep_Learning/Image_Manage/imgs/4.jpg
+C:/TaiLieu/Deep_Learning/Image_Manage/imgs/5.jpg
+C:/TaiLieu/Deep_Learning/Image_Manage/imgs/6.jpg
+C:/TaiLieu/Deep_Learning/Image_Manage/imgs/7.JPG
